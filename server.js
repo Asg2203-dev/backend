@@ -68,15 +68,6 @@ app.post("/register", (req, res) => {
   res.json({ message: "Registration successful!", key });
 });
 
-app.post("/subscribe", (req, res) => {
-  const { solanaAddress } = req.body;
-
-  // Process subscription payment (you’ll need to integrate Solana payments)
-  console.log(`Subscription payment received from: ${solanaAddress}`);
-
-  res.json({ message: "Subscription successful!" });
-});
-
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
