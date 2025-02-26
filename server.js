@@ -53,6 +53,10 @@ const sendEmail = (email, key) => {
 };
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("CASSEXCHANGE Backend is running!");
+});
+
 app.post("/register", (req, res) => {
   const { email } = req.body;
   const key = generateKey();
@@ -66,6 +70,10 @@ app.post("/register", (req, res) => {
   sendEmail(email, key);
 
   res.json({ message: "Registration successful!", key });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
 
 app.listen(PORT, () => {
